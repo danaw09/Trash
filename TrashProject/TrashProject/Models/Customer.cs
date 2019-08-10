@@ -40,9 +40,10 @@ namespace TrashProject.Models
 
         [Required]
         public int AddressId { get; set; }
-        public int Address { get; set; }
+        public string Address { get; set; }
 
-        public int? WeeklyPickupDayId { get; set; }
+        public string WeeklyPickupDayId { get; set; }
         public string WeeklyPickupDay { get; set; }
+        public int PostalCode { get; set; }
     }
 }

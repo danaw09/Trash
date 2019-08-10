@@ -179,6 +179,14 @@
     <Compile Include="Migrations\201908101719022_initialSeed.Designer.cs">
       <DependentUpon>201908101719022_initialSeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908101901582_seedingWorkorder.cs" />
+    <Compile Include="Migrations\201908101901582_seedingWorkorder.Designer.cs">
+      <DependentUpon>201908101901582_seedingWorkorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908101930566_seedCustomerPostalCode.cs" />
+    <Compile Include="Migrations\201908101930566_seedCustomerPostalCode.Designer.cs">
+      <DependentUpon>201908101930566_seedCustomerPostalCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -246,11 +254,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\WeeklyPickUp.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -268,6 +281,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908101719022_initialSeed.resx">
       <DependentUpon>201908101719022_initialSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101901582_seedingWorkorder.resx">
+      <DependentUpon>201908101901582_seedingWorkorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101930566_seedCustomerPostalCode.resx">
+      <DependentUpon>201908101930566_seedCustomerPostalCode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

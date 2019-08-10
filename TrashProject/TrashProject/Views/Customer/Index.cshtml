@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TrashProject.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Customers</h2>
+    @if ((string)TempData["ProfileUpdate"] == "success")
+    {
+    <p class="text-success">Profile has been updated.</p>
+}
+
+    <table id="customers" class="table table-bordered table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Weekly Pickup</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(customer.FirstName + " " + customer.FirstName, "Details", "Customer", new { id = customer.UserId }, null)</td>
+                    <td>
+                        @customer.Streetaddress<br />
+                        @customer.postalCode,
+                        @customer.state
+                        @customer.LastName
+                        @customer.FirstName
+                    </td>
+                    <td>@customer.WeeklyPickUpDay</td>
+                    <td>@customer.phone</td>
+                    <td>@Html.ActionLink("Edit", "Edit", "Customer", new { id = customer.UserId }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @section scripts
+    {
+        <script>
+            $(document).ready(function () {
+                $("#customers").DataTable();
+            })
+        </script>
+    }
+
