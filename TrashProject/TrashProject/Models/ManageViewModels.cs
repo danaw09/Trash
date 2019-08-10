@@ -66,6 +66,8 @@ namespace TrashProject.Models
         public string Number { get; set; }
     }
 
+   
+
     public class VerifyPhoneNumberViewModel
     {
         [Required]

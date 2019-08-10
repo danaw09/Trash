@@ -1,47 +1,48 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrashProject.Models;
 
 namespace TrashProject.Controllers
 {
     public class CustomerController : Controller
-    {
-        // GET: Customer
-        public ActionResult Index()
+    { private ApplicationDbContext _context;
+
+        public CustomerController()
         {
-            return View();
+            _context = new ApplicationDbContext();
+        }
+        // GET: Customer
+        public ActionResult CustomerIndex()
+        {
+            var user = _context.Users.Find(User.Identity.GetUserId());
+            return View(user);
         }
 
         // GET: Customer/Details/5
-        public ActionResult Details(int id)
+        public ActionResult AddAddress()
         {
             return View();
         }
 
         // GET: Customer/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Customer/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult AddAddress(AddAddressViewModel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            var user = _context.Users.Find(User.Identity.GetUserId());
+            user.Address = model.Address;
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+            _context.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            _context.SaveChanges();
+            return View("CustomerIndex");
         }
 
+       
+       
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
@@ -49,41 +50,12 @@ namespace TrashProject.Controllers
         }
 
         // POST: Customer/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+       
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Customer/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Customer/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
+
+    
 }
+

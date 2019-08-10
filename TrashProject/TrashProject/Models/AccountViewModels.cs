@@ -60,6 +60,10 @@ namespace TrashProject.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
     }
 
     public class RegisterViewModel
@@ -69,6 +73,7 @@ namespace TrashProject.Models
         public string UserName { get; set; }
 
         [Required]
+        [Display(Name = "UserRoles")]
         public string UserRoles { get; set; }
 
         [Required]
