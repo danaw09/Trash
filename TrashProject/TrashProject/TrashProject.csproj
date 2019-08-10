@@ -181,6 +181,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,6 +197,10 @@
     <Compile Include="Migrations\201908101930566_seedCustomerPostalCode.cs" />
     <Compile Include="Migrations\201908101930566_seedCustomerPostalCode.Designer.cs">
       <DependentUpon>201908101930566_seedCustomerPostalCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908102233586_seedUser.cs" />
+    <Compile Include="Migrations\201908102233586_seedUser.Designer.cs">
+      <DependentUpon>201908102233586_seedUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -299,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908101930566_seedCustomerPostalCode.resx">
       <DependentUpon>201908101930566_seedCustomerPostalCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908102233586_seedUser.resx">
+      <DependentUpon>201908102233586_seedUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
