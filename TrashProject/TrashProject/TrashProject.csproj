@@ -276,7 +276,6 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\WeeklyPickUp.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Role\AddRole.cshtml" />
     <Content Include="Views\Shared\_LayoutCustomer.cshtml" />
